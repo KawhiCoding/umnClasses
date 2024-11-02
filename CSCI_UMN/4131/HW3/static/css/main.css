@@ -1,0 +1,335 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar {
+    background-color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    padding-right: 40px;
+}
+
+#main-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 5cm;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    flex-grow: 1;
+    justify-content: center;
+    
+}
+
+#main-nav li {
+    background-color: #445b72;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#main-nav li a {
+    text-decoration: none;
+    color: rgb(27, 142, 174);
+}
+ 
+#main-nav li a:hover {
+    background-color: #34495e;
+}
+
+#search-form {
+    list-style-type: none;
+    display: flex;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    font-size: large;
+}
+
+#search-input, #category-select, #search-btn {
+    padding: 8px; /* Same padding for all */
+    font-size: 18px; /* Same font size for all */
+    cursor: pointer;
+}
+
+#search-btn {
+    background-color: #2872d4;
+}
+
+
+h1 {
+    font-family: 'Georgia', serif;
+    color: #34495e;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 30px;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    color: #95a5a6;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+p {
+    color: #2c3e50;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+
+nav form {
+    display: inline;
+}
+
+
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.content img {
+    margin-right: 20px;
+}
+
+.content section {
+    max-width: 600px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.company-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+.company-image {
+    width: 40%; 
+    height: auto; 
+}
+
+.company-description {
+    width: 40%;
+    background-color: #f0f0f0; 
+    padding: 15px; 
+}
+
+.gallery-table {
+    margin: 0 auto;
+    width: 80%;
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+.hover_img {
+    display: none; 
+    position: absolute;
+}
+
+.hover_link:hover + .hover_img {
+    display: inline-block; 
+}
+
+.gallery-table th {
+    color: white;
+    padding: 10px;
+}
+
+.gallery-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.gallery-table tr:nth-child(odd) {
+    background-color: #34495e;
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.gallery-table-container {
+    width: 70%;
+    padding-right: 20px;
+}
+
+.gallery-preview {
+    width: 30%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+#preview-content img {
+    max-width: 100%;
+}
+
+#preview-content p {
+    margin-top: 10px;
+}
+
+/** adding listing page **/
+
+.adding-forms {
+    max-width: fit-content; 
+    margin: 20px auto;
+    padding: 20px; 
+}
+
+.adding-forms label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.adding-forms input[type="text"], .adding-forms input[type="month"], .adding-forms textarea, #Categories-form {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+}
+
+#Categories-form {
+    font-size: medium;
+    background-color: #ccc;
+}
+
+#adding-submit {
+    background-color: rgb(51, 108, 141);
+    margin: 10px 0; 
+    padding: 10px; 
+    color: white; 
+    font-size: 1em; 
+    cursor: pointer; 
+}
+
+.product-image {
+    max-width: 300px; /* Set maximum width for the image */
+    height: auto;     /* Maintain aspect ratio */
+    border: 1px solid #ccc; /* Optional: add a border around the image */
+    border-radius: 5px; /* Optional: round the corners */
+}
+/* Styling the bid box */
+.bid-box {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    list-style: none;
+}
+
+.description-box {
+    width: 80%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    list-style: none;
+}
+
+
+.bids-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Line under the word "Bids" */
+.bids-header {
+    width: 70%;
+    border-bottom: 3px solid #2872d4; /* Blue line */
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+
+/* Place bid button */
+#place-bid-btn {
+    background-color: #2872d4; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#place-bid-btn:hover {
+    background-color: #1a5bb8; /* Darker blue on hover */
+}
+
+/* open-button stuff */
+
+.form-popup {
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.form-container input[type="text"] {
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.btn.cancel {
+    background-color: red;
+}

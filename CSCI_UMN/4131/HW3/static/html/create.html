@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Auction Auction</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div>
+        <nav id="navbar">
+            <ul id="main-nav">
+                <li><a href="/">About Us</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/create">Add Listing</a></li>
+            </ul>
+            <form action="" method="GET" id="search-form">
+                <input name="q" type="search"  aria-label="Search">
+                <select name="category" id="category-select">
+                    <option value="All">All Categories</option>
+                    <option value="Historic">Historic</option>
+                    <option value="Modern">Modern</option>
+                    <option value="Luxury">Luxury</option>
+                </select>
+                <button type="submit" name="search" id="search-btn" value="Search">
+            </form>
+        </nav>
+    </div>
+    
+    <h1 id="adding-title">Add a Listing</h1>
+    <div class="adding-forms">
+        <form action="/create" method="POST">
+            <label for="title-Form">Title:</label>
+            <input type="text" name="title-form" id="title-form" placeholder="Listing title" required>
+            <label for="image-Form">Image URL:</label>
+            <input type="text" name="Image-form" id="Image-form" placeholder="https://example.com/image.jpg" required>
+            <label for="descript-Form">Description</label>
+            <textarea type="text" name="Descript-form" id="Descript-form" required></textarea>
+            
+            
+            <label for="categories-Form">Category</label>
+            <select name="Categories-form" id="Categories-form" required>
+                <option value="All">All Categories</option>
+                <option value="Historic">Historic</option>
+                <option value="Modern">Modern</option>
+                <option value="Luxury">Luxury</option>
+            </select>
+ 
+            <div id="other_category" style="display:none;">
+                <label for="other_category_input">Other Category:</label>
+                <input type="text" id="other_category_input" name="other_category_input"><br><br>
+            </div> 
+            
+            <label for="sale-Form">Sale Date</label>
+            <input type="date" name="sale-Form" id="sale-Form" required>
+            <br>
+            <button type="submit" name="adding-submit" id="adding-submit" required>
+        </form>
+    </div>
+    <script src="/js/new_listing.js"></script>
+</body>
+</html>
+
