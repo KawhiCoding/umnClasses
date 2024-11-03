@@ -7,31 +7,28 @@
     <link href="main.css" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <nav>
-            <ul class="NavBar">
-                <li><a href="/main">About Us</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/add_listing">Add Listing</a></li>
+    <nav>
+        <ul class="NavBar">
+            <li><a href="/main">About Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/add_listing">Add Listing</a></li>
 
-                <form action="" method="GET" class="NavBar">
-                    <label for="seachBar"></label>
-                    <input type="search" name="seachBar" id="seachBar">
-    
-                    <label for="dropDown"></label>
-                    <select name="dropDown" id="dropDown">
-                        <option value="all">All Categorys</option>
-                        <option value="sports">Sports</option>
-                        <option value="actors">Actors/Movie</option>
-                        <option value="music">Music</option>
-                    </select>
-                    
-                    <input type="submit" id="submit_btn">
-                </form>
-            </ul>
-            
-        </nav>
-    </div>
+            <form action="" method="GET" class="NavBar">
+                <label for="seachBar"></label>
+                <input type="search" name="q" id="seachBar">
+
+                <label for="dropDown"></label>
+                <select name="Categories" id="dropDown">
+                    <option value="All">All Categorys</option>
+                    <option value="sports">Sports</option>
+                    <option value="actors">Actors/Movie</option>
+                    <option value="music">Music</option>
+                </select>
+                
+                <input type="submit" id="submit_btn">
+            </form>
+        </ul>
+    </nav>
     <div class="mainPage">
         <h1>Historical Shoes Auction</h1>
         <h2>The Shoes Worn by History's Legends</h2>

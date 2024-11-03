@@ -236,6 +236,7 @@ def render_gallery(query, category):
 
 
 
+
 # Provided function -- converts numbers like 42 or 7.347 to "$42.00" or "$7.35"
 def typeset_dollars(number):
     return f"${number:.2f}"

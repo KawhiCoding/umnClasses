@@ -6,14 +6,28 @@
     <title>Historical Shoes Auction</title>
 </head>
 <body>
-    <div class="NavBar">
-        <nav>
-            <ul>
-                <li><a href="/main">About Us</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav>
+        <ul class="NavBar">
+            <li><a href="/main">About Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/add_listing">Add Listing</a></li>
+
+            <form action="" method="GET" class="NavBar">
+                <label for="seachBar"></label>
+                <input type="search" name="seachBar" id="seachBar">
+
+                <label for="dropDown"></label>
+                <select name="dropDown" id="dropDown">
+                    <option value="all">All Categorys</option>
+                    <option value="sports">Sports</option>
+                    <option value="actors">Actors/Movie</option>
+                    <option value="music">Music</option>
+                </select>
+                
+                <input type="submit" id="submit_btn">
+            </form>
+        </ul>
+    </nav>
 
     <p>Error 404 page not found</p>
 

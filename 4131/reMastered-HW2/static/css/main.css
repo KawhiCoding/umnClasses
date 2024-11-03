@@ -1,16 +1,27 @@
+/* body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ccc3c3;
+    margin: 0;
+    padding: 0;
+}
+
 /* nav bar */
 nav{
     background-color: rgb(106, 50, 50);
     padding: 15px 20px;
-    width: 100%;  
 }
 
-.NavBar li{
-    display: inline;
+.NavBar {
+    display: flex; /* Use flexbox on the navbar */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space out items */
+}
+
+.NavBar li {
+    list-style: none; /* Remove bullet points */
     padding: 15px;
-    gap: 50px; 
-    align-items: center; 
-    margin: 25px;
+    margin: 0; /* Remove margin to better align with the form */
 }
 
 nav a {
@@ -22,7 +33,8 @@ nav a {
 }
 
 .NavBar form {
-    display: inline;
+    display: flex;
+    align-items: center; /* Center the form items vertically */
     padding: 10px; 
 }
 
@@ -34,11 +46,6 @@ nav a {
 
 .NavBar form input[type="submit"] {
     cursor: pointer; 
-}
-
-/* body */
-body{
-    background-color: beige;
 }
 
 /* mainPage */
@@ -65,25 +72,21 @@ body{
     flex-shrink: 0;
 }
 /* gallery */
-.galleryTable {
-    margin-top: 5px;
-    width: 100%;
-    border-collapse: collapse; ;
+
+.gallery-title {
+    text-align: center;
 }
 
-.galleryTable thead {
+.galleryTable {
+    margin: 0 auto; 
+    width: 85%;
+    border-collapse: collapse; 
+}
+
+.galleryTable thead{
     background-color: rgb(106, 50, 50);
     color: white;
-}
-
-.tableData tr:nth-child(odd) {
-    background-color: #f2f2f2; /* White color */
-    color: black; /* Text color for red rows */
-}
-
-.tableData tr:nth-child(even) {
-    background-color: rgb(106, 50, 50);
-    color: white; /* Text color for white rows */
+    padding: 10px;
 }
 
 .galleryTable td {
@@ -91,4 +94,60 @@ body{
     text-align: left;
 }
 
+.tableData tr:nth-child(odd) {
+    background-color: #f2f2f2; 
+    color: black; 
+}
 
+.tableData tr:nth-child(even) {
+    background-color: rgb(106, 50, 50);
+    color: white; 
+}
+a {
+    text-decoration: None;
+    color: #ac7031;
+}
+/* listing */
+.listing-title {
+    text-align: center;
+}
+
+.content{
+    margin: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex; 
+}
+
+.column{
+    flex: 1;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    margin: 5px;
+    
+}
+
+.description-box{
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+}
+.bid-box {
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
+}
+
+.line {
+    margin-bottom: 20px;
+    width: 100%; 
+    height: 2px; 
+    background-color: #3d4d92; 
+    
+}
+
+.product-image {
+    width: 100%; 
+    height: auto; 
+}
