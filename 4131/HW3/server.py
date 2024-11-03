@@ -5,70 +5,64 @@ import re
 # PUT YOUR GLOBAL VARIABLES AND HELPER FUNCTIONS HERE.
 
 listings = [
-     {
+    {
+        'title': 'Banned Air Jordan Ones',
+        'image': 'https://m.media-amazon.com/images/I/7137GjFiZ6L._AC_SY395_.jpg',
+        'description': 'The iconic Air Jordan Ones that were banned from the NBA. A piece of sneaker history.',
+        'category': 'sports',
         'id': 1,
-        'title': 'Lake Street Auction House',
-        'image_url': 'https://images.squarespace-cdn.com/content/v1/5e669116eea473063ca33484/1657915819906-KO3AMOTQDSPBFHLRYH1W/070822lsc102.jpg?format=2500w', 
-        'description': 'A historic auction house located on Lake Street, known for its rare and valuable antiques.',
-        'category': 'Historic',
-        'sale_date': '2024-10-28',  
-        'end_date': '2024-10-30',
-        
+        'sale_date': '2024-12-15 12;00',
+        'end_date': '2024-11-15 18:00',
         'bids': [
-            {'name': 'Charlie Baker', 'amount': 160000, 'comment': 'A beautiful piece that is worth the price.'},
-            {'name': 'Jessica Rivera', 'amount': 165000, 'comment': 'Simply exquisite!'},
-            {'name': 'Liam Carter', 'amount': 170000, 'comment': 'Ive been waiting for something like this for years.'}
+            {'bidder': 'James Rodriguez', 'amount': 50000, 'comment': 'An absolute must-have for any collector.'},
+            {'bidder': 'Emily Chen', 'amount': 52000, 'comment': 'The story behind these shoes makes them priceless.'},
+            {'bidder': 'William Carter', 'amount': 54000, 'comment': 'I wont stop until these are mine.'},
+            {'bidder': 'James Rodriguez', 'amount': 50000, 'comment': 'An absolute must-have for any collector.'},
+            {'bidder': 'Emily Chen', 'amount': 52000, 'comment': 'The story behind these shoes makes them priceless.'},
+            {'bidder': 'William Carter', 'amount': 54000, 'comment': 'I wont stop until these are mine.'}
         ]
     },
     {
+        'title': 'Back to the Future Nike Shoes',
+        'image': 'https://www.hollywoodreporter.com/wp-content/uploads/2019/07/nike-publicity-h_2019.jpg?w=1296&h=730&crop=1',
+        'description': 'The self-lacing Nike Mag from Back to The Future, a perfect blend of movie memorabilia and futuristic fashion.',
+        'category': 'actors',
         'id': 2,
-        'title': 'UMN Auction House',
-        'image_url': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/UMN-EddyHall.jpg/220px-UMN-EddyHall.jpg',
-        'description': 'A modern auction house affiliated with the University of Minnesota, specializing in contemporary art and design.',
-        'category': 'Modern',
-        'sale_date': '2024-11-20',  
-        'end_date': '2024-11-29', 
-        
+        'sale_date': '2024-12-15 12;00',
+        'end_date': '2024-11-12 20:30',
         'bids': [
-            {'name': 'bobby Jackson', 'amount': 45, 'comment': 'maybe.'},
-            {'name': 'Olivia Martinez', 'amount': 195000, 'comment': 'A rare gem that I must own!'},
-            {'name': 'Sophia Davis', 'amount': 200000, 'comment': 'Absolutely stunning.'},
-            {'name': 'Jack Wilson', 'amount': 205000, 'comment': 'I can already imagine this in my collection.'},
-            {'name': 'Jack Black', 'amount': 205001, 'comment': 'this is for me.'}
+            {'bidder': 'Sarah Johnson', 'amount': 120000, 'comment': 'These are a dream come true!'},
+            {'bidder': 'Lucas Brown', 'amount': 125000, 'comment': 'Cant let this piece of nostalgia slip away.'},
+            {'bidder': 'Ava Clark', 'amount': 130000, 'comment': 'A true collectors item.'},
+            {'bidder': 'joe Clark', 'amount': 1300000, 'comment': 'A true item.'}
         ]
     },
     {
+        'title': 'Michael Jacksons Dance Shoes',
+        'image': 'https://external-preview.redd.it/3eal1lLVFglo657rVhdHecbOHu2yX8zyBFxII12IcaI.jpg?auto=webp&s=ca8ee13b158be85f58692410dc3962dbd27099f5',
+        'description': 'The iconic shoes worn by Michael Jackson when he unveiled the Moonwalk.',
+        'category': 'music',
         'id': 3,
-        'title': 'Minnhaha Auction House',
-        'image_url': 'https://www.architectureinc.com/hubfs/Architecture_Incorporated_May2021/Images/1_Minnehaha_Co_Courthouse.jpg',
-        'description': 'A renowned modern auction house located near Minnehaha Falls, offering a diverse selection of contemporary collectibles and art pieces.',
-        'category': 'Modern',
-        'sale_date': '2024-12-01',  
-        'end_date': '2024-12-12',  
-       
+        'sale_date': '2024-12-15 12;00',
+        'end_date': '2024-11-10 22:00',
         'bids': [
-            {'name': 'David Thompson', 'amount': 130000, 'comment': 'A brilliant addition to my collection.'},
-            {'name': 'Dillan Clark', 'amount': 134000, 'comment': 'The craftsmanship is amazing.'},
-            {'name': 'Emily Clark', 'amount': 135000, 'comment': 'The craftsmanship is unmatched.'},
-            {'name': 'Henry Ford', 'amount': 140000, 'comment': 'This will definitely be the centerpiece of my home.'}
+            {'bidder': 'Mia Wilson', 'amount': 100000, 'comment': 'An essential piece of pop culture history.'},
+            {'bidder': 'Ethan Lee', 'amount': 105000, 'comment': 'It would be an honor to own these.'},
+            {'bidder': 'Sophia Martinez', 'amount': 110000, 'comment': 'These shoes have so much legacy behind them.'}
         ]
     },
     {
+        'title': 'Mike Tysons Final Boxing Shoes',
+        'image': 'https://minotaurclothing.co.uk/wp-content/uploads/2022/10/The-Mike-Tyson-look-Boot.jpg',
+        'description': 'The shoes worn by Mike Tyson in his final professional boxing match. A tribute to a legendary career.',
+        'category': 'sports',
         'id': 4,
-        'title': 'New-prauge Auction House',
-        'image_url': 'https://thumbs.dreamstime.com/z/random-building-asheville-north-carolina-usa-taken-december-67611951.jpg?ct=jpeg',
-        'description': 'An upscale auction house in New Prague, specializing in luxury items including rare jewelry, fine art, and exclusive collectibles.',
-        'category': 'Luxery',
-        'sale_date': '2024-11-05',  
-        'end_date': '2024-11-22',  
-        
+        'sale_date': '2024-12-15 12;00',
+        'end_date': '2024-11-18 16:00',
         'bids': [
-            {'name': 'Alice Johnson', 'amount': 175000, 'comment': 'A masterpiece, worth every penny!'},
-            {'name': 'Michael Lee', 'amount': 180000, 'comment': 'Excited to add this to my gallery.'},
-            {'name': 'Samantha Green', 'amount': 185000, 'comment': 'A true investment piece for the future.'},
-            {'name': 'Alice John', 'amount': 195000, 'comment': 'worth every penny!'},
-            {'name': 'Michael laeah', 'amount': 380000, 'comment': 'wow its a great gallery.'},
-            {'name': 'Samantha brown', 'amount': 485000, 'comment': 'I have this in the bag.'}
+            {'bidder': 'Daniel Thompson', 'amount': 60000, 'comment': 'A fitting tribute to an incredible fighter.'},
+            {'bidder': 'Ella Rivera', 'amount': 62000, 'comment': 'The perfect piece for any Tyson fan.'},
+            {'bidder': 'Jacob Harris', 'amount': 64000, 'comment': 'These shoes are worth every penny.'}
         ]
     }
 ]
@@ -92,194 +86,214 @@ def unescape_url(url_str):
     return urllib.parse.unquote_plus(url_str)
 
 
-def parse_query_parameters(partponse):
-    pairs = partponse.split('&')
-    storedPares = {}
-
+def parse_query_parameters(response):
+    # Split the query string into key-value pairs
+    pairs = response.split("&")
+    # Initialize a dictionary to store parsed parameters
+    dict = {}
+    # Iterate over each key-value pair
+    # Split the pair by '=' to separate key and value
     for pair in pairs:
         if '=' in pair:  
             key, value = pair.split('=')  
-            storedPares[key] = value.replace('+', ' ')
+            dict[key] = value.replace('+', ' ')
         else:
-            storedPares["q"] = ""
-            storedPares["Categories"] = "All"
-    return storedPares
+            dict["q"] = ""
+            dict["Categories"] = "All"
+    return dict
 
 def render_listing(listing):
-    listing_html = f"""
-    <html>
+    listing_html = f"""  
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <title>{escape_html(listing['title'])}</title>
         <link rel="stylesheet" href="/main.css">
-        <script>
-            function openForm() {{
-                document.getElementById("myForm").style.display = "block";
-            }}
-
-            function closeForm() {{
-                document.getElementById("myForm").style.display = "none";
-            }}
-        </script>
+        <script src="/bid.js" defer></script>
+        <style>
+            .new-bid {{ display: none; }} 
+        </style>
     </head>
     <body>
-        <div>
-            <nav id="navbar">
-                <ul id="main-nav">
-                    <li><a href="/">About Us</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
-                    <li><a href="/create">Add Listing</a></li>
-                </ul>
-                <form action="" method="GET" id="search-form">
-                    <input name="q" type="search" aria-label="Search">
-                    <select name="category" id="category-select">
-                        <option value="All">All Categories</option>
-                        <option value="Historic">Historic</option>
-                        <option value="Modern">Modern</option>
-                        <option value="Luxury">Luxury</option>
+        <nav>
+            <ul class="NavBar">
+                <li><a href="/main">About Us</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/create">Add Listing</a></li>
+
+                <form action="" method="GET" class="NavBar">
+                    <label for="seachBar"></label>
+                    <input type="search" name="q" id="seachBar">
+
+                    <label for="dropDown"></label>
+                    <select name="Categories" id="dropDown">
+                        <option value="All">All Categorys</option>
+                        <option value="sports">Sports</option>
+                        <option value="actors">Actors/Movie</option>
+                        <option value="music">Music</option>
                     </select>
-                    <input type="submit" name="search" id="search-btn" value="Search">
+                    
+                    <input type="submit" id="submit_btn">
                 </form>
-            </nav>
-        </div>
-        <h1>{escape_html(listing['title'])}</h1>
-        <div class="content">
-            <div class="left-column">
-                <img src="{listing['image_url']}" alt="{escape_html(listing['title'])}" class="product-image">
-                <div class="description-box">
-                    <p><strong>Description:</strong> {escape_html(listing['description'])}</p>
-                    <p><strong>Category:</strong> {escape_html(listing['category'])}</p>
-                    <p><strong>Sale Date:</strong> {listing['sale_date']}</p>
-                </div>
-            </div>
-            <div class="right-column">
-                <div class="bids-header-container">
-                    <h2 class="bids-header">Bids</h2> 
-                    <button class="place-bid-btn" onclick="openForm()">Place Bid</button> <!-- Corrected onclick function -->
-                </div>
-                 <div class="form-popup" id="myForm" style="display: none;">
-                        <form action="/place_bid" method "POST" class="form-container">
-                            <p>Place Your Bid</p> 
+            </ul>
+        </nav>
 
-                            <label for="name"><b>Your Name</b></label>
-                            <input type="text" placeholder="Enter Name" name="name" required>
-
-                            <label for="amount"><b>Amount:</b></label>
-                            <input type="text" placeholder="Enter Amount" name="amount" required>
-
-                            <label for="comment"><b>Comment:</b></label> 
-                            <input type="text" placeholder="Enter a Comment" name="comment" required>
-
-                            <button type="submit" class="btn">Submit Bid</button> 
-                            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-                        </form>
+        <div>
+            <h1 class="listing-title">{escape_html(listing['title'])}</h1>
+                <div class="content">
+                    <div class="column">
+                        <img src="{listing['image']}" alt="{escape_html(listing['title'])}" class="product-image">
+                        <div class="description-box">
+                            <p>{escape_html(listing['description'])}</p>
+                        </div>
                     </div>
-                <ul>
-    """
+                    <div class="column">
+                        <div class="btn_title">
+                            <h2 class="adding-title">Bids</h2>
+                            <button type="button" id="bid-btn"> Place Bid</button>
+                        </div>
+                        <ul>
+                        <div class="line"></div>
+                        <li class='new-bid'> 
+                            <form action="/place_bid" method="POST" class="new-bid">
+                                <label for="new-bid-name">Your Name:</label>
+                                <input type="text" name="new-bid-name" id="new-bid-name" placeholder="Your Name" required>
 
+                                <label for="new-bid-amount">Amount:</label>
+                                <input type="number" name="new-bid-amount" id="new-bid-amount" placeholder="Amount" required>
+
+                                <label for="new-bid-comment">Comment:</label>
+                                <textarea name="new-bid-comment" id="new-bid-comment" placeholder="Comment" required></textarea>
+                                
+                                <input type="submit" name="new-bid-submit" id="new-bid-submit" required>
+                            </form>
+                        </li>
+                        """
+                        
     for bid in listing['bids']:
         listing_html += f"""
             <li class="bid-box">
-                <span class="bidder-name"><strong>{escape_html(bid['name'])}</strong></span><br>
+                <span class="bidder-name">{escape_html(bid['bidder'])}</span>
                 <span class="bid-amount">{typeset_dollars(bid['amount'])}</span>
                 <p class="bid-comment">{escape_html(bid['comment'])}</p>
             </li>
+            """
+        
+    listing_html += """
+                        </ul>
+                    </div>
+                </div>     
+        </body>
+    </html>
+    """
+    return listing_html 
+
+
+def render_gallery(query, category):
+    gallery = f"""  
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Historical Shoes Auction</title>
+        <link href="main.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <ul class="NavBar">
+                <li><a href="/main">About Us</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/create">Add Listing</a></li>
+
+                <form action="" method="GET" class="NavBar">
+                    <label for="seachBar"></label>
+                    <input type="search" name="q" id="seachBar">
+
+                    <label for="dropDown"></label>
+                    <select name="Categories" id="dropDown">
+                        <option value="All">All Categorys</option>
+                        <option value="sports">Sports</option>
+                        <option value="actors">Actors/Movie</option>
+                        <option value="music">Music</option>
+                    </select>
+                    
+                    <input type="submit" id="submit_btn">
+                </form>
+            </ul>
+        </nav>
+        <div class="gallery-right">
+            <h1 class="gallery-title">Gallery</h1>
+            <table class="galleryTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Number of Bids</th>
+                        <th>Category</th>
+                        <th>Top Bid</th>
+                        <th> Sale Date </th>
+                        <th>Auction Ends</th>
+                    </tr>
+                </thead>
+                <tbody Class="tableData">
         """
 
-    listing_html += """
-                </ul>
+
+
+    if not query and category == "All":
+        for listing in listings:
+            data_image = listing['image']
+            data_description = listing['description']
+            if listing['bids']:
+                top_bid = typeset_dollars(listing['bids'][-1]['amount'])
+            else:
+                top_bid = "$0.00"
+            gallery += f"""
+                <tr>
+                    <td><a href="/listing/{listing['id']}">{listing['title']}</a></td>
+                    <td>{len(listing['bids'])}</td>
+                    <td>{listing['category']}</td>
+                    <td>{top_bid}</td>
+                    <td>{listing['sale_date']}</td>
+                    <td>{listing['end_date']}</td>
+                </tr>
+            """
+    else:
+        filtered_listings = [listing for listing in listings if query.lower() in listing['title'].lower()] if query else listings.copy()
+
+        if category != "All":
+            filtered_listings = [listing for listing in filtered_listings if listing['category'] == category]
+
+        for listing in filtered_listings:
+            if listing['bids']:
+                top_bid = typeset_dollars(listing['bids'][-1]['amount'])
+            else:
+                top_bid = "$0.00"
+            gallery += f"""
+                <tr>
+                    <td><a href="/listing/{listing['id']}">{listing['title']}</a></td>
+                    <td>{len(listing['bids'])}</td>
+                    <td>{listing['category']}</td>
+                    <td>{top_bid}</td>
+                    <td>{listing['sale_date']}</td>
+                    <td>{listing['end_date']}</td>
+                </tr>
+            """
+
+    gallery += """
+            </table>
+        </div>
+        <div class="gallery-left">
+            <div class="img-desc-js">
+                 <img id="preview-image" src="" alt="" style="max-width: 100%; display: none;">
+                    <p id="preview-description"></p>
             </div>
         </div>
     </body>
     </html>
     """
 
-    return listing_html
-
-
-def render_gallery(query, category):
-    gallery_html = """
-    <html>
-    <head>
-        <title>Auction Gallery</title>
-        <link rel="stylesheet" href="/main.css">
-    </head>
-    <body>
-        <div>
-            <nav id="navbar">
-                <ul id="main-nav">
-                    <li><a href="/">About Us</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
-                    <li><a href="/create">Add Listing</a></li>
-                </ul>
-                <form action="" method="GET" id="search-form">
-                    <input name="q" type="search" aria-label="Search">
-                    <select name="category" id="category-select">
-                        <option value="All">All Categories</option>
-                        <option value="Historic">Historic</option>
-                        <option value="Modern">Modern</option>
-                        <option value="Luxury">Luxury</option>
-                    </select>
-                    <input type="submit" name="search" id="search-btn" value="Search">
-                </form>
-            </nav>
-        </div>
-        <h1>Auction House Gallery</h1>
-        <table class="gallery-table">
-            <tr>
-                <th>Listing</th>
-                <th>Number of Bids</th>
-                <th>Category</th>
-                <th>Top Bid</th>
-                <th>Sale Date</th>
-                <th>Auction Ends</th>
-            </tr>
-    """
-
-    filtered_listings = listings
-
-    if query:
-        filtered_listings = [listing for listing in listings if query.lower() in listing['title'].lower()]
-
-    if category != "All":
-        filtered_listings = [listing for listing in filtered_listings if listing['category'] == category]
-
-    if not filtered_listings:
-        gallery_html += """
-            <tr>
-                <td colspan="6">No listings found.</td>
-            </tr>
-        """
-    else:
-        for listing in filtered_listings:
-            num_bids = len(listing['bids'])
-            top_bid = max([bid['amount'] for bid in listing['bids']], default=0)  # Use default=0 if no bids
-            gallery_html += f"""
-            <tr>
-                <td><a href="/listing/{listing['id']}">{listing['title']}</a></td>
-                <td>{num_bids}</td>
-                <td>{listing['category']}</td>
-                <td>{typeset_dollars(top_bid)}</td>
-                <td>{listing['sale_date']}</td>
-                <td>{listing['end_date']}</td>
-            </tr>
-            """
-            # If you want to show the image for each listing, you can do it here.
-            # If you only want to show one image, you should handle it outside the loop.
-            gallery_html += f"""
-            <tr>
-                <td colspan="6" class="hover_img">
-                    <img src="{listing['image_url']}" class="image_switcher" alt="{listing['title']}">
-                </td>
-            </tr>
-            """
-
-    gallery_html += """
-        </table>
-    </body>
-    </html>
-    """
-
-    return gallery_html
+    return gallery
 
 
 
@@ -288,12 +302,13 @@ def render_gallery(query, category):
 def typeset_dollars(number):
     return f"${number:.2f}"
 
+
 def add_new_listing(params): 
     print(params)
     required_fields = ["title-form", "Image-form", "Descript-form", "Categories-form", "sale-Form"]
     for field in required_fields:
         if field not in params or not params[field]:
-            return False  # Missing field
+            return False  
 
 
 
@@ -311,16 +326,18 @@ def add_new_listing(params):
     listings.append(new_listing)
     return True
 
+
 def add_new_bid(params):
+    print(params)
     listing_id = int(params.get("listing_id", -1))
     # Validate listing ID and other fields
     listing = next((lst for lst in listings if lst["id"] == listing_id), None)
-    if not listing or not params.get("name") or not params.get("amount"):
+    if not listing or not params.get("new-bid-name") or not params.get("new-bid-amount"):
         return False  # Missing fields or invalid listing
 
-    bid_amount = float(params["amount"])
-    if bid_amount <= max([bid["amount"] for bid in listing.get("bids", [])], default=0):
-        return False  # Bid too low
+    bid_amount = float(params["new-bid-amount"])
+    if bid_amount <= max([bid["new-bid-amount"] for bid in listing.get("bids", [])], default=0):
+        return False  
 
     new_bid = {
         "name": params["name"],
@@ -364,12 +381,6 @@ def server_GET(url: str) -> tuple[str | bytes, str, int]:
             category_var = 'All'
         return render_gallery(gallery_var ,category_var),'text/html', 200
 
-    elif path == "/main.css":
-        return open("static/css/main.css", "r").read(), "text/css", 200
-
-    if path == "/images/main":
-        return open("static/images/project_image.jpeg", "rb").read(), "image/jpeg", 200
-    
     elif path.startswith("/listing/"):
         part = None
         listings_id = path[9:]
@@ -381,18 +392,28 @@ def server_GET(url: str) -> tuple[str | bytes, str, int]:
             return render_listing(part), "text/html", 200
         else: 
             return open("static/html/404.html").read(), 'text/html', 404
+    
+    elif path == "/create":
+        return open("static/html/create.html").read(), 'text/html', 200
+
+    elif path == "/main.css":
+        return open("static/css/main.css", "r").read(), "text/css", 200
+
+    elif path == "/images/main":
+        return open("static/images/project_image.jpeg", "rb").read(), "image/jpeg", 200
+    
             
     elif path == "/create":
         return open("static/html/create.html").read(), 'text/html', 200
     
-    if path == "/bid.js": 
-        return open("static/js/bid.js").read(), "application/js", 200
+    elif path == "/bid.js": 
+        return open("static/js/bid.js").read(), "application/javascript", 200
     
-    if path == "/new_listing.js": 
-        return open("static/js/new_listing.js").read(), "application/js", 200
+    elif path == "/new_listing.js": 
+        return open("static/js/new_listing.js").read(), "application/javascript", 200
 
-    if path == "/table.js": 
-        return open("static/js/table.js").read(), "application/js", 200
+    elif path == "/table.js": 
+        return open("static/js/table.js").read(), "application/javascript", 200
     else:
         return open("static/html/404.html").read(),'text/html', 404
     

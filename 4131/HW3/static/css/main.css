@@ -1,227 +1,201 @@
+/* body */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ccc3c3;
     margin: 0;
     padding: 0;
 }
 
-#navbar {
-    background-color: #34495e;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    padding-right: 40px;
+
+/* nav bar */
+nav{
+    background-color: rgb(106, 50, 50);
+    padding: 15px 20px;
 }
 
-#main-nav {
-    list-style-type: none;
-    display: flex;
-    gap: 5cm;
-    margin: 0;
-    padding: 0;
-    font-size: x-large;
-    flex-grow: 1;
-    justify-content: center;
-    
+.NavBar {
+    display: flex; /* Use flexbox on the navbar */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space out items */
 }
 
-#main-nav li {
-    background-color: #445b72;
+.NavBar li {
+    list-style: none; /* Remove bullet points */
     padding: 15px;
-    border-radius: 5px;
+    margin: 0; /* Remove margin to better align with the form */
 }
 
-#main-nav li a {
+nav a {
+    color: #ecf0f1;
+    background-color: rgb(135, 11, 11);
     text-decoration: none;
-    color: rgb(27, 142, 174);
-}
- 
-#main-nav li a:hover {
-    background-color: #34495e;
-}
-
-#search-form {
-    list-style-type: none;
-    display: flex;
-    gap: 3px;
-    margin: 0;
-    padding: 0;
-    font-size: large;
-}
-
-#search-input, #category-select, #search-btn {
-    padding: 8px; /* Same padding for all */
-    font-size: 18px; /* Same font size for all */
-    cursor: pointer;
-}
-
-#search-btn {
-    background-color: #2872d4;
-}
-
-
-h1 {
-    font-family: 'Georgia', serif;
-    color: #34495e;
-    text-align: center;
-    font-size: 3rem;
-    margin-top: 30px;
-}
-
-h2 {
-    font-family: 'Georgia', serif;
-    color: #95a5a6;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-section {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-p {
-    color: #2c3e50;
+    padding: 10px 20px;
     font-size: 18px;
-    line-height: 1.6;
 }
 
-
-
-nav form {
-    display: inline;
-}
-
-
-.content {
+.NavBar form {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Center the form items vertically */
+    padding: 10px; 
 }
 
-.content img {
-    margin-right: 20px;
+.NavBar form input[type="search"], 
+.NavBar form select, 
+.NavBar form input[type="submit"] {
+    padding: 8px; 
 }
 
-.content section {
-    max-width: 600px;
+.NavBar form input[type="submit"] {
+    cursor: pointer; 
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* mainPage */
+.mainPage {
+    text-align: center; /* Center-align text inside the main container */
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid black;
-}
-
-
-.content {
+.textAndImageContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
     padding: 20px;
-    margin-top: 60px;
 }
 
-.company-container {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-    gap: 20px;
+.textSection {
+    padding: 5px;
+    background-color: #ac7031;
+    max-width: 450px;
+    text-align: left; 
 }
 
-.company-image {
-    width: 40%; 
-    height: auto; 
+.shoeImage {
+    flex-shrink: 0;
+}
+/* gallery */
+
+.gallery-title {
+    text-align: center;
 }
 
-.company-description {
-    width: 40%;
-    background-color: #f0f0f0; 
-    padding: 15px; 
+.galleryTable {
+    margin: 0 auto; 
+    width: 95%;
+    border-collapse: collapse; 
 }
 
-.gallery-table {
-    margin: 0 auto;
-    width: 80%;
-    border-collapse: collapse;
+.gallery-left, .gallery-right{
     display: inline-block;
 }
 
-.hover_img {
-    display: none; 
-    position: absolute;
+.gallery-left{
+    margin: 15px;
+    width: 20%; /* Smaller space for the preview */
+    padding: 10px;
+    float: right; /* Allow the right gallery to float */
+}
+.img-desc-js {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.hover_link:hover + .hover_img {
-    display: inline-block; 
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
-
-.gallery-table th {
+.galleryTable, thead{
+    background-color: rgb(106, 50, 50);
     color: white;
     padding: 10px;
 }
 
-.gallery-table td {
+.galleryTable, td {
     padding: 10px;
-    text-align: left;
 }
 
-.gallery-table tr:nth-child(odd) {
-    background-color: #34495e;
+.tableData tr:nth-child(odd) {
+    background-color: #f2f2f2; 
+    color: black; 
 }
 
+.tableData, tr:nth-child(even) {
+    background-color: rgb(106, 50, 50);
+    color: white; 
+}
 a {
-    color: #1a73e8;
-    text-decoration: none;
+    text-decoration: None;
+    color: #ac7031;
+}
+/* listing */
+.listing-title {
+    text-align: center;
 }
 
-a:hover {
-    text-decoration: underline;
+.content{
+    margin: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex; 
 }
 
-.gallery-container {
+.column{
+    flex: 1;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    margin: 5px;
+    
+}
+
+.description-box{
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+}
+.bid-box {
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
+}
+
+.line {
+    margin-bottom: 20px;
+    width: 100%; 
+    height: 2px; 
+    background-color: #3d4d92; 
+    
+}
+
+.product-image {
+    width: 100%; 
+    height: auto; 
+}
+/* adding page */
+
+.btn_title{
     display: flex;
+    margin-left: 200px;
+    
+}
+
+
+.btn_title, .adding-title, #bid-btn{
     justify-content: space-between;
-    margin-top: 20px;
 }
 
-.gallery-table-container {
-    width: 70%;
-    padding-right: 20px;
+#bid-btn{
+    background-color: #3d4d92;
+    color: white;
 }
 
-.gallery-preview {
-    width: 30%;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: #f9f9f9;
+
+.main_form{
+    width: 25%;
+    margin: 0 auto;
 }
-
-#preview-content img {
-    max-width: 100%;
-}
-
-#preview-content p {
-    margin-top: 10px;
-}
-
-/** adding listing page **/
-
-.adding-forms {
-    max-width: fit-content; 
-    margin: 20px auto;
-    padding: 20px; 
-}
-
 .adding-forms label {
     display: block;
     margin-top: 10px;
@@ -229,11 +203,12 @@ a:hover {
     color: #34495e;
 }
 
-.adding-forms input[type="text"], .adding-forms input[type="month"], .adding-forms textarea, #Categories-form {
+.adding-forms input[type="text"], .adding-forms input[type="month"], .adding-forms textarea, #Categories-form, #sale-Form {
     width: 100%;
     padding: 12px; 
     border: 1px solid #ccc; 
     border-radius: 4px; 
+    font-size: medium;
 }
 
 #Categories-form {
@@ -249,87 +224,45 @@ a:hover {
     font-size: 1em; 
     cursor: pointer; 
 }
+ /* new bid button */
 
-.product-image {
-    max-width: 300px; /* Set maximum width for the image */
-    height: auto;     /* Maintain aspect ratio */
-    border: 1px solid #ccc; /* Optional: add a border around the image */
-    border-radius: 5px; /* Optional: round the corners */
-}
-/* Styling the bid box */
-.bid-box {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-    list-style: none;
-}
-
-.description-box {
-    width: 80%;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px 0;
-    list-style: none;
-}
-
-
-.bids-header-container {
+.new-bid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Space between elements */
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
 }
 
-/* Line under the word "Bids" */
-.bids-header {
+.new-bid label {
+    width: 100%; /* Make labels take the full width */
+    margin-top: 10px; /* Space above labels */
+}
+
+.new-bid input[type="text"],
+.new-bid input[type="number"],
+.new-bid textarea {
+    width: 48%; /* Adjust width for inputs */
+    padding: 10px;
+    margin-bottom: 10px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.new-bid textarea {
     width: 70%;
-    border-bottom: 3px solid #2872d4; /* Blue line */
-    padding-bottom: 5px;
-    font-size: 1.5em;
 }
 
-/* Place bid button */
-#place-bid-btn {
-    background-color: #2872d4; /* Blue background */
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-#place-bid-btn:hover {
-    background-color: #1a5bb8; /* Darker blue on hover */
-}
-
-/* open-button stuff */
-
-.form-popup {
-    border-radius: 2px;
-    border: 1px solid #ddd;
+.new-bid input[type="submit"] {
+    width: 100%; /* Full width submit button */
     padding: 10px;
-    margin: 10px 0;
-}
-
-.form-container input[type="text"] {
-    padding: 8px;
-    margin: 5px 0 15px 0;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin: 5px 0;
-}
-
-.btn.cancel {
-    background-color: red;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above button */
 }

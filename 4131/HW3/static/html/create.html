@@ -7,29 +7,31 @@
     <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-    <div>
-        <nav id="navbar">
-            <ul id="main-nav">
-                <li><a href="/">About Us</a></li>
-                <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/create">Add Listing</a></li>
-            </ul>
-            <form action="" method="GET" id="search-form">
-                <input name="q" type="search"  aria-label="Search">
-                <select name="category" id="category-select">
-                    <option value="All">All Categories</option>
-                    <option value="Historic">Historic</option>
-                    <option value="Modern">Modern</option>
-                    <option value="Luxury">Luxury</option>
+    <nav>
+        <ul class="NavBar">
+            <li><a href="/main">About Us</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/create">Add Listing</a></li>
+
+            <form action="" method="GET" class="NavBar">
+                <label for="seachBar"></label>
+                <input type="search" name="q" id="seachBar">
+
+                <label for="dropDown"></label>
+                <select name="Categories" id="dropDown">
+                    <option value="All">All Categorys</option>
+                    <option value="sports">Sports</option>
+                    <option value="actors">Actors/Movie</option>
+                    <option value="music">Music</option>
                 </select>
-                <button type="submit" name="search" id="search-btn" value="Search">
+                
+                <input type="submit" id="submit_btn">
             </form>
-        </nav>
-    </div>
-    
+        </ul>
+    </nav>
     <h1 id="adding-title">Add a Listing</h1>
     <div class="adding-forms">
-        <form action="/create" method="POST">
+        <form action="/create" method="POST" class="main_form">
             <label for="title-Form">Title:</label>
             <input type="text" name="title-form" id="title-form" placeholder="Listing title" required>
             <label for="image-Form">Image URL:</label>
@@ -54,7 +56,8 @@
             <label for="sale-Form">Sale Date</label>
             <input type="date" name="sale-Form" id="sale-Form" required>
             <br>
-            <button type="submit" name="adding-submit" id="adding-submit" required>
+
+            <input type="submit" name="adding-submit" id="adding-submit" required>
         </form>
     </div>
     <script src="/js/new_listing.js"></script>
