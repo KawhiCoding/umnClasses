@@ -11,15 +11,12 @@ listings = [
         'description': 'The iconic Air Jordan Ones that were banned from the NBA. A piece of sneaker history.',
         'category': 'sports',
         'id': 1,
-        'sale_date': '2024-12-15 12;00',
+        'sale_date': '2024-12-15 12:00',  
         'end_date': '2024-11-15 18:00',
         'bids': [
             {'bidder': 'James Rodriguez', 'amount': 50000, 'comment': 'An absolute must-have for any collector.'},
             {'bidder': 'Emily Chen', 'amount': 52000, 'comment': 'The story behind these shoes makes them priceless.'},
-            {'bidder': 'William Carter', 'amount': 54000, 'comment': 'I wont stop until these are mine.'},
-            {'bidder': 'James Rodriguez', 'amount': 50000, 'comment': 'An absolute must-have for any collector.'},
-            {'bidder': 'Emily Chen', 'amount': 52000, 'comment': 'The story behind these shoes makes them priceless.'},
-            {'bidder': 'William Carter', 'amount': 54000, 'comment': 'I wont stop until these are mine.'}
+            {'bidder': 'William Carter', 'amount': 54000, 'comment': 'I won\'t stop until these are mine.'},  
         ]
     },
     {
@@ -28,22 +25,22 @@ listings = [
         'description': 'The self-lacing Nike Mag from Back to The Future, a perfect blend of movie memorabilia and futuristic fashion.',
         'category': 'actors',
         'id': 2,
-        'sale_date': '2024-12-15 12;00',
+        'sale_date': '2024-12-15 12:00',  
         'end_date': '2024-11-12 20:30',
         'bids': [
             {'bidder': 'Sarah Johnson', 'amount': 120000, 'comment': 'These are a dream come true!'},
-            {'bidder': 'Lucas Brown', 'amount': 125000, 'comment': 'Cant let this piece of nostalgia slip away.'},
-            {'bidder': 'Ava Clark', 'amount': 130000, 'comment': 'A true collectors item.'},
-            {'bidder': 'joe Clark', 'amount': 1300000, 'comment': 'A true item.'}
+            {'bidder': 'Lucas Brown', 'amount': 125000, 'comment': 'Can\'t let this piece of nostalgia slip away.'},  
+            {'bidder': 'Ava Clark', 'amount': 130000, 'comment': 'A true collector\'s item.'},  
+            {'bidder': 'Joe Clark', 'amount': 1300000, 'comment': 'A true item.'} 
         ]
     },
     {
-        'title': 'Michael Jacksons Dance Shoes',
+        'title': 'Michael Jackson\'s Dance Shoes',
         'image': 'https://external-preview.redd.it/3eal1lLVFglo657rVhdHecbOHu2yX8zyBFxII12IcaI.jpg?auto=webp&s=ca8ee13b158be85f58692410dc3962dbd27099f5',
         'description': 'The iconic shoes worn by Michael Jackson when he unveiled the Moonwalk.',
         'category': 'music',
         'id': 3,
-        'sale_date': '2024-12-15 12;00',
+        'sale_date': '2024-12-15 12:00',  
         'end_date': '2024-11-10 22:00',
         'bids': [
             {'bidder': 'Mia Wilson', 'amount': 100000, 'comment': 'An essential piece of pop culture history.'},
@@ -52,12 +49,12 @@ listings = [
         ]
     },
     {
-        'title': 'Mike Tysons Final Boxing Shoes',
+        'title': 'Mike Tyson\'s Final Boxing Shoes',
         'image': 'https://minotaurclothing.co.uk/wp-content/uploads/2022/10/The-Mike-Tyson-look-Boot.jpg',
         'description': 'The shoes worn by Mike Tyson in his final professional boxing match. A tribute to a legendary career.',
         'category': 'sports',
         'id': 4,
-        'sale_date': '2024-12-15 12;00',
+        'sale_date': '2024-12-15 12:00',  
         'end_date': '2024-11-18 16:00',
         'bids': [
             {'bidder': 'Daniel Thompson', 'amount': 60000, 'comment': 'A fitting tribute to an incredible fighter.'},
@@ -142,7 +139,7 @@ def render_listing(listing):
             <h1 class="listing-title">{escape_html(listing['title'])}</h1>
                 <div class="content">
                     <div class="column">
-                        <img src="{listing['image']}" alt="{escape_html(listing['title'])}" class="product-image">
+                         <img src="{listing.get('image', 'default-image-url.jpg')}" alt="{escape_html(listing['title'])}" class="product-image">
                         <div class="description-box">
                             <p>{escape_html(listing['description'])}</p>
                         </div>
@@ -156,6 +153,7 @@ def render_listing(listing):
                         <div class="line"></div>
                         <li class='new-bid'> 
                             <form action="/place_bid" method="POST" class="new-bid">
+                                <input type="hidden" name="listing_id" value="{listing['id']}">
                                 <label for="new-bid-name">Your Name:</label>
                                 <input type="text" name="new-bid-name" id="new-bid-name" placeholder="Your Name" required>
 
@@ -169,16 +167,18 @@ def render_listing(listing):
                             </form>
                         </li>
                         """
-                        
-    for bid in listing['bids']:
-        listing_html += f"""
-            <li class="bid-box">
-                <span class="bidder-name">{escape_html(bid['bidder'])}</span>
-                <span class="bid-amount">{typeset_dollars(bid['amount'])}</span>
-                <p class="bid-comment">{escape_html(bid['comment'])}</p>
-            </li>
-            """
-        
+    if 'bids' in listing:                    
+        for bid in listing['bids']:
+            listing_html += f"""
+                <li class="bid-box">
+                    <span class="bidder-name">{escape_html(bid['bidder'])}</span>
+                    <span class="bid-amount">{typeset_dollars(bid['amount'])}</span>
+                    <p class="bid-comment">{escape_html(bid['comment'])}</p>
+                </li>
+                """
+    else:
+        listing_html += "<li>No bids yet.</li>"    
+
     listing_html += """
                         </ul>
                     </div>
@@ -198,6 +198,8 @@ def render_gallery(query, category):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Historical Shoes Auction</title>
         <link href="main.css" rel="stylesheet">
+        <script src="/table.js" defer></script>
+        <script src="/hover.js" defer></script>
     </head>
     <body>
         <nav>
@@ -242,20 +244,20 @@ def render_gallery(query, category):
 
     if not query and category == "All":
         for listing in listings:
-            data_image = listing['image']
-            data_description = listing['description']
+            # data_image = listing['image']
+            # data_description = listing['description']
             if listing['bids']:
                 top_bid = typeset_dollars(listing['bids'][-1]['amount'])
             else:
                 top_bid = "$0.00"
             gallery += f"""
-                <tr>
+                 <tr class="listing-row" data-image="{listing['image']}">
                     <td><a href="/listing/{listing['id']}">{listing['title']}</a></td>
                     <td>{len(listing['bids'])}</td>
                     <td>{listing['category']}</td>
                     <td>{top_bid}</td>
                     <td>{listing['sale_date']}</td>
-                    <td>{listing['end_date']}</td>
+                    <td class="auction-end-time">{listing['end_date']}</td>
                 </tr>
             """
     else:
@@ -270,13 +272,13 @@ def render_gallery(query, category):
             else:
                 top_bid = "$0.00"
             gallery += f"""
-                <tr>
+                <tr class="listing-row" data-image="{listing['image']}">
                     <td><a href="/listing/{listing['id']}">{listing['title']}</a></td>
                     <td>{len(listing['bids'])}</td>
                     <td>{listing['category']}</td>
                     <td>{top_bid}</td>
                     <td>{listing['sale_date']}</td>
-                    <td>{listing['end_date']}</td>
+                    <td class="auction-end-time">{listing['end_date']}</td>
                 </tr>
             """
 
@@ -285,8 +287,7 @@ def render_gallery(query, category):
         </div>
         <div class="gallery-left">
             <div class="img-desc-js">
-                 <img id="preview-image" src="" alt="" style="max-width: 100%; display: none;">
-                    <p id="preview-description"></p>
+                 <img id="preview-image" src="https://m.media-amazon.com/images/I/7137GjFiZ6L._AC_SY395_.jpg" alt="preview Image" style="max-width: 100%;">
             </div>
         </div>
     </body>
@@ -304,7 +305,6 @@ def typeset_dollars(number):
 
 
 def add_new_listing(params): 
-    print(params)
     required_fields = ["title-form", "Image-form", "Descript-form", "Categories-form", "sale-Form"]
     for field in required_fields:
         if field not in params or not params[field]:
@@ -321,6 +321,7 @@ def add_new_listing(params):
         "category": params["Categories-form"] ,
         "sale_date": "10/23/2024",
         "end_date": params["sale-Form"],
+        "bids": [] 
     }
 
     listings.append(new_listing)
@@ -330,19 +331,23 @@ def add_new_listing(params):
 def add_new_bid(params):
     print(params)
     listing_id = int(params.get("listing_id", -1))
+    
     # Validate listing ID and other fields
     listing = next((lst for lst in listings if lst["id"] == listing_id), None)
     if not listing or not params.get("new-bid-name") or not params.get("new-bid-amount"):
         return False  # Missing fields or invalid listing
 
     bid_amount = float(params["new-bid-amount"])
-    if bid_amount <= max([bid["new-bid-amount"] for bid in listing.get("bids", [])], default=0):
+    current_max_bid = max([bid["amount"] for bid in listing.get("bids", [])], default=0)
+
+    # Check if the new bid amount is greater than the current max bid
+    if bid_amount <= current_max_bid:
         return False  
 
     new_bid = {
-        "name": params["name"],
+        "bidder": params["new-bid-name"],
         "amount": bid_amount,
-        "comment": params.get("comment", "")
+        "comment": params.get("new-bid-comment", "")
     }
     listing.setdefault("bids", []).append(new_bid)
     return True
@@ -400,7 +405,7 @@ def server_GET(url: str) -> tuple[str | bytes, str, int]:
         return open("static/css/main.css", "r").read(), "text/css", 200
 
     elif path == "/images/main":
-        return open("static/images/project_image.jpeg", "rb").read(), "image/jpeg", 200
+        return open("static/images/project_image.jpeg").read(), "image/jpeg", 200
     
             
     elif path == "/create":
@@ -437,18 +442,19 @@ def server_POST(url: str, body: str) -> tuple[str | bytes, str, int]:
     if "?" in url:
         path, query = url.split("?",1)
 
-    elif path == "/create":
-        print("this should work")
+    if path == "/create":
         if add_new_listing(adding_new_lst):  
             return open("static/html/create_success.html").read(), 'text/html', 201
         else:
             return open("static/html/create_fail.html").read(), 'text/html', 400
 
     elif path == "/place_bid":
-        if add_new_bid(adding_new_bid):
+        if add_new_bid(adding_new_lst):
             return open("static/html/create_success.html").read(), 'text/html', 201
         else:
             return open("static/html/create_fail.html").read(), 'text/html', 400
+
+    return open("static/html/404.html").read(), 'text/html', 404
 
 # You shouldn't need to change content below this. It would be best if you just left it alone.
 

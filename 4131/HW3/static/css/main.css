@@ -129,6 +129,17 @@ a {
     text-decoration: None;
     color: #ac7031;
 }
+
+#preview-image {
+    display: block;         
+    transition: opacity 0.3s ease-in-out; 
+    opacity: 1;           
+}
+
+.img-desc-js:hover #preview-image {
+    opacity: 0;          
+}
+
 /* listing */
 .listing-title {
     text-align: center;
@@ -227,6 +238,16 @@ a {
  /* new bid button */
 
 .new-bid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Space between elements */
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
+}
+
+.new-bid form {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap onto the next line */
     justify-content: space-between; /* Space between elements */
