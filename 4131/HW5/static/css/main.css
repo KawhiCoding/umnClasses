@@ -1,0 +1,289 @@
+/* body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ccc3c3;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* nav bar */
+nav{
+    background-color: rgb(106, 50, 50);
+    padding: 15px 20px;
+}
+
+.NavBar {
+    display: flex; /* Use flexbox on the navbar */
+    align-items: center; /* Align items vertically centered */
+    justify-content: space-between; /* Space out items */
+}
+
+.NavBar li {
+    list-style: none; /* Remove bullet points */
+    padding: 15px;
+    margin: 0; /* Remove margin to better align with the form */
+}
+
+nav a {
+    color: #ecf0f1;
+    background-color: rgb(135, 11, 11);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.NavBar form {
+    display: flex;
+    align-items: center; /* Center the form items vertically */
+    padding: 10px; 
+}
+
+.NavBar form input[type="search"], 
+.NavBar form select, 
+.NavBar form input[type="submit"] {
+    padding: 8px; 
+}
+
+.NavBar form input[type="submit"] {
+    cursor: pointer; 
+}
+
+/* mainPage */
+.mainPage {
+    text-align: center; /* Center-align text inside the main container */
+}
+
+.textAndImageContainer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+.textSection {
+    padding: 5px;
+    background-color: #ac7031;
+    max-width: 450px;
+    text-align: left; 
+}
+
+.shoeImage {
+    flex-shrink: 0;
+}
+/* gallery */
+
+.gallery-title {
+    text-align: center;
+}
+
+.galleryTable {
+    margin: 0 auto; 
+    width: 95%;
+    border-collapse: collapse; 
+}
+
+.gallery-left, .gallery-right{
+    display: inline-block;
+}
+
+.gallery-left{
+    margin: 15px;
+    width: 20%; /* Smaller space for the preview */
+    padding: 10px;
+    float: right; /* Allow the right gallery to float */
+}
+.img-desc-js {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.galleryTable, thead{
+    background-color: rgb(106, 50, 50);
+    color: white;
+    padding: 10px;
+}
+
+.galleryTable, td {
+    padding: 10px;
+}
+
+.tableData tr:nth-child(odd) {
+    background-color: #f2f2f2; 
+    color: black; 
+}
+
+.tableData, tr:nth-child(even) {
+    background-color: rgb(106, 50, 50);
+    color: white; 
+}
+a {
+    text-decoration: None;
+    color: #ac7031;
+}
+
+#preview-image {
+    display: block;         
+    transition: opacity 0.3s ease-in-out; 
+    opacity: 1;           
+}
+
+.img-desc-js:hover #preview-image {
+    opacity: 0;          
+}
+
+/* listing */
+.listing-title {
+    text-align: center;
+}
+
+.content{
+    margin: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex; 
+}
+
+.column{
+    flex: 1;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    margin: 5px;
+    
+}
+
+.description-box{
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+}
+.bid-box {
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
+}
+
+.line {
+    margin-bottom: 20px;
+    width: 100%; 
+    height: 2px; 
+    background-color: #3d4d92; 
+    
+}
+
+.product-image {
+    width: 100%; 
+    height: auto; 
+}
+/* adding page */
+
+.btn_title{
+    display: flex;
+    margin-left: 200px;
+    
+}
+
+
+.btn_title, .adding-title, #bid-btn{
+    justify-content: space-between;
+}
+
+#bid-btn{
+    background-color: #3d4d92;
+    color: white;
+}
+
+
+.main_form{
+    width: 25%;
+    margin: 0 auto;
+}
+.adding-forms label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.adding-forms input[type="text"], .adding-forms input[type="month"], .adding-forms textarea, #Categories-form, #sale-Form {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: medium;
+}
+
+#Categories-form {
+    font-size: medium;
+    background-color: #ccc;
+}
+
+#adding-submit {
+    background-color: rgb(51, 108, 141);
+    margin: 10px 0; 
+    padding: 10px; 
+    color: white; 
+    font-size: 1em; 
+    cursor: pointer; 
+}
+ /* new bid button */
+
+.new-bid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Space between elements */
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
+}
+
+.new-bid form {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: space-between; /* Space between elements */
+    background-color: #dbd7d7;
+    padding: 1rem 1rem;
+    margin-top: 8px;
+    list-style: none; 
+}
+
+.new-bid label {
+    width: 100%; /* Make labels take the full width */
+    margin-top: 10px; /* Space above labels */
+}
+
+.new-bid input[type="text"],
+.new-bid input[type="number"],
+.new-bid textarea {
+    width: 48%; /* Adjust width for inputs */
+    padding: 10px;
+    margin-bottom: 10px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.new-bid textarea {
+    width: 70%;
+}
+
+.new-bid input[type="submit"] {
+    width: 100%; /* Full width submit button */
+    padding: 10px;
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above button */
+}
