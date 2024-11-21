@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Historical Shoes Auction
+  link(rel='stylesheet', href='/css/main.css')
+  script(src="/js/table.js" defer)
+  script(src="/js/hover.js" defer)
+nav
+  ul.NavBar
+    li
+      a(href='/main') About Us
+    li
+      a(href='/gallery') Gallery
+    li
+      a(href='/create') Add Listing
+    form.NavBar(action='' method='GET')
+      label(for='seachBar')
+      input#seachBar(type='search' name='q')
+      label(for='dropDown')
+      select#dropDown(name='Categories')
+        option(value='All') All Categorys
+        option(value='sports') Sports
+        option(value='actors') Actors/Movie
+        option(value='music') Music
+      input#submit_btn(type='submit')
+.mainPage
+  h1 Historical Shoes Auction
+  h2 The Shoes Worn by History&apos;s Legends
+  .textAndImageContainer
+    img.shoeImage(src='images/proj.jpeg' alt='Image of shoe' width='300' height='300')
+    section.textSection
+      p
+        | Welcome to the exclusive shoe auction house!
+        | Here, you will find some of the most iconic and sought-after
+        | footwear ever worn by legendary figures.
+        | From rare sports memorabilia to iconic pieces of history,
+        | each pair tells a story and holds a unique place in culture.
+        | Don&apos;t miss your chance to own a piece of history.
+      ul
+        h4 Sneak Peek of New Shoes on Auction
+        li Mike Tyson&apos;s final boxing match shoes
+        li Michael Jordan&apos;s Flu Game shoe
+        li More soon
+      p
+        | Stay tuned for more exciting additions and upcoming auctions!
+        | If you&apos;re a collector or simply appreciate the art of footwear,
+        | keep an eye out for these once-in-a-lifetime opportunities to bid on legendary shoes.

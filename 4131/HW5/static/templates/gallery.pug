@@ -1,0 +1,91 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Historical Shoes Auction
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/table.js" defer)
+    script(src="/js/hover.js" defer)
+  body
+    nav
+      ul.NavBar
+        li
+          a(href="/main") About Us
+        li
+          a(href="/gallery") Gallery
+        li
+          a(href="/create") Add Listing
+        form(action="" method="GET" class="NavBar")
+          label(for="seachBar")
+          input(type="search" name="q" id="seachBar")
+          label(for="dropDown")
+          select(name="Categories" id="dropDown")
+            option(value="All") All Categories
+            option(value="sports") Sports
+            option(value="actors") Actors/Movie
+            option(value="music") Music
+          input(type="submit" id="submit_btn")
+
+    .gallery-right
+      h1.gallery-title Gallery
+      table.galleryTable(id="galleryTable")
+        thead
+          tr
+            th Title
+            th Number of Bids
+            th Category
+            th Top Bid
+            th Sale Date
+            th Auction Ends
+            th Delete
+        tbody.tableData
+          each listing in listings
+            tr.listing-row(data-image=listing.image)
+              td
+                a(href=`/listing/${listing.id}`) #{listing.title}
+              td= listing.bids.length
+              td= listing.category
+              td= listing.top_bid
+              td= listing.sale_date
+              td.auction-end-time= listing.end_date
+              th
+                button.delete-btn(data-listing-id=listing.id) Delete
+
+        //- if !query && category == "All"
+        //-   if listing.bids.length > 0
+        //-     - var top_bid = typeset_dollars(listing.bids[listing.bids.length - 1].amount)
+        //-   else
+        //-     - var top_bid = "$0.00"
+        //-   tr.listing-row(data-image=listing.image)
+        //-     td
+        //-       a(href=`/listing/${listing.id}`) #{listing.title}
+        //-     td= listing.bids.length
+        //-     td= listing.category
+        //-     td= top_bid
+        //-     td= listing.sale_date
+        //-     td.auction-end-time= listing.end_date
+        //-     th
+        //-       button.delete-btn(data-listing-id=listing.id) Delete
+
+        //- // Render filtered listings if provided
+        //- - if filtered_listings && filtered_listings.length > 0
+        //-   each listing in filtered_listings
+        //-     if listing.bids.length > 0
+        //-       - var top_bid = typeset_dollars(listing.bids[listing.bids.length - 1].amount)
+        //-     else
+        //-       - var top_bid = "$0.00"
+        //-     tr.listing-row(data-image=listing.image)
+        //-       td
+        //-         a(href=`/listing/${listing.id}`) #{listing.title}
+        //-       td= listing.bids.length
+        //-       td= listing.category
+        //-       td= top_bid
+        //-       td= listing.sale_date
+        //-       td.auction-end-time= listing.end_date
+        //-       th
+        //-         button.delete-btn(data-listing-id=listing.id) Delete
+
+    .gallery-left
+      .img-desc-js
+        img#preview-image(src="" alt="preview Image" style="max-width: 100%")

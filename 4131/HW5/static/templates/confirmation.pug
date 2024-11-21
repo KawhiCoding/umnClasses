@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Historical Shoes Auction
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    nav
+      ul.NavBar
+        li
+          a(href="/main") About Us
+        li
+          a(href="/gallery") Gallery
+        li
+          a(href="/create") Add Listing
+        form(action="" method="GET" class="NavBar")
+          label(for="seachBar")
+          input(type="search" name="q" id="seachBar")
+          label(for="dropDown")
+          select(name="Categories" id="dropDown")
+            option(value="All") All Categories
+            option(value="sports") Sports
+            option(value="actors") Actors/Movie
+            option(value="music") Music
+          input(type="submit" id="submit_btn")
+
+    p Success! Your listing has been successfully created.
+    p Title: #{title}
+    p Category: #{category}
+    p Sale Date: #{sale_date}
+    p End Date: #{end_date}
+    a(href='/gallery') Back to Gallery
+

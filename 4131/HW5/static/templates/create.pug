@@ -1,0 +1,50 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title The Auction Auction
+  link(rel='stylesheet', href='/css/main.css')
+  script(src='/js/new_listing.js')
+
+nav
+  ul.NavBar
+    li
+      a(href='/main') About Us
+    li
+      a(href='/gallery') Gallery
+    li
+      a(href='/create') Add Listing
+    form.NavBar(action='' method='GET')
+      label(for='seachBar')
+      input#seachBar(type='search' name='q')
+      label(for='dropDown')
+      select#dropDown(name='Categories')
+        option(value='All') All Categories
+        option(value='sports') Sports
+        option(value='actors') Actors/Movie
+        option(value='music') Music
+      input#submit_btn(type='submit')
+h1#adding-title Add a Listing
+.adding-forms
+  form.main_form(action='/create' method='POST')
+    label(for='title') Title:
+    input#title(type='text' name='title' placeholder='Listing title' required='')
+    label(for='image') Image URL:
+    input#image(type='text' name='image' placeholder='https://example.com/image.jpg' required='')
+    label(for='description') Description
+    textarea#description(name='description' required='')
+    label(for='category') Category
+    select#category(name='category' required='')
+      option(value='All') All Categories
+      option(value='Historic') Historic
+      option(value='Modern') Modern
+      option(value='Luxury') Luxury
+    #other_category(style='display:none;')
+      label(for='other_category_input') Other Category:
+      input#other_category_input(type='text' name='other_category_input')
+      br
+      br
+    label(for='sale_date') Sale Date
+    input#sale_date(type='date' name='sale_date' required='')
+    br
+    input#adding-submit(type='submit' name='adding-submit' required='')
