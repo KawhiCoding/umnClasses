@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Historical Shoes Auction
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    nav
+      ul.NavBar
+        li
+          a(href="/main") About Us
+        li
+          a(href="/gallery") Gallery
+        li
+          a(href="/create") Add Listing
+        form(action="" method="GET" class="NavBar")
+          label(for="seachBar")
+          input(type="search" name="q" id="seachBar")
+          label(for="dropDown")
+          select(name="Categories" id="dropDown")
+            option(value="All") All Categories
+            option(value="sports") Sports
+            option(value="actors") Actors/Movie
+            option(value="music") Music
+          input(type="submit" id="submit_btn")
+
+    div
+      h1.listing-title #{listing.title}
+
+      .content
+        .column
+          img.product-image(src=listing.image || 'default-image-url.jpg' alt=listing.title)
+          .description-box
+            p #{listing.description}
+
+        .column
+          .btn_title
+            h2.adding-title Bids
+            button(type="button" id="bid-btn") Place Bid
+
+          ul
+            .line
+            li.new-bid
+              form.new-bid(action="/place_bid" method="POST")
+                input(type="hidden" name="listing_id" value=listing.id)
+
+                label(for="new-bid-name") Your Name:
+                input(type="text" name="new-bid-name" id="new-bid-name" placeholder="Your Name" required)
+
+                label(for="new-bid-amount") Amount:
+                input(type="number" name="new-bid-amount" id="new-bid-amount" placeholder="Amount" required)
+
+                label(for="new-bid-comment") Comment:
+                textarea(name="new-bid-comment" id="new-bid-comment" placeholder="Comment" required)
+
+                input(type="submit" name="new-bid-submit" id="new-bid-submit")
+
+            if listing.bids && listing.bids.length
+              each bid in listing.bids
+                li.bid-box
+                  span.bidder-name #{bid.bidder}
+                  span.bid-amount #{typeset_dollars(bid.amount)}
+                  p.bid-comment #{bid.comment}
+            else
+              li No bids yet.

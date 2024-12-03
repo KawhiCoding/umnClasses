@@ -1,0 +1,25 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet', href='/css/main.css')
+  title Historical Shoes Auction
+nav
+  ul.NavBar
+    li
+      a(href='/main') About Us
+    li
+      a(href='/gallery') Gallery
+    li
+      a(href='/create') Add Listing
+    form.NavBar(action='' method='GET')
+      label(for='seachBar')
+      input#seachBar(type='search' name='q')
+      label(for='dropDown')
+      select#dropDown(name='Categories')
+        option(value='All') All Categorys
+        option(value='sports') Sports
+        option(value='actors') Actors/Movie
+        option(value='music') Music
+      input#submit_btn(type='submit')
+p Error 404 page not found

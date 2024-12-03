@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Historical Shoes Auction
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    nav
+      ul.NavBar
+        li
+          a(href="/main") About Us
+        li
+          a(href="/gallery") Gallery
+        li
+          a(href="/create") Add Listing
+        form(action="" method="GET" class="NavBar")
+          label(for="seachBar")
+          input(type="search" name="q" id="seachBar")
+          label(for="dropDown")
+          select(name="Categories" id="dropDown")
+            option(value="All") All Categories
+            option(value="sports") Sports
+            option(value="actors") Actors/Movie
+            option(value="music") Music
+          input(type="submit" id="submit_btn")
+
+    p Error: There was an issue with your form submission.
+    p Please make sure all fields are filled out correctly.
+    a(href='/create') Go back to the create listing form
