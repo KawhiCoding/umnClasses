@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Photography
+    link(rel='stylesheet', href='/css/main.css')
+
+  body
+    nav
+      ul.navbar
+        li
+          a(href='/main') Home
+        li
+          a(href='/gallery') Gallery
+        li
+          a(href='/create') Add Photo
+        li
+          a(href='/contact') Contact us
+
+    main
+      h1 Gallery
+      
+      .row
+        each image in images
+          .column
+            img(src=`/images/${image.image}`, alt=image.title)
+            p #{image.title}
+            p #{image.description}

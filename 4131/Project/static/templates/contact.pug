@@ -1,0 +1,42 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Photography
+  link(rel='stylesheet', href='/css/main.css')
+
+nav
+  ul.navbar 
+    li.logo
+      a(href='/main') Home
+    li
+      a(href='/gallery') Gallery
+    li
+      a(href='/create') Add Photo
+    li
+      a(href='/contact') Contact us
+  main
+    h1 Contact Us
+    p 
+      | I would appreciate it if you could complete the following form with as much useful data as you can, 
+      | such as the project's location, the quantity of photographs needed the planned use of the images, 
+      | and the project's completion schedule.
+    // Form to collect user contact details
+    form(action='/contact', method='POST')
+      div
+        label(for='first_name') First Name
+        input(type='text', id='first_name', name='first_name', required)
+      div
+        label(for='last_name') Last Name
+        input(type='text', id='last_name', name='last_name', required)
+      div
+        label(for='email') Email Address
+        input(type='email', id='email', name='email', required)
+      div
+        label(for='subject') Subject
+        input(type='text', id='subject', name='subject', required)
+      div
+        label(for='message') Message
+        textarea(id='message', name='message', rows='4', cols='50', required)
+      div
+        button(type='submit') Submit

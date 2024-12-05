@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Photography
+    link(rel='stylesheet', href='/css/main.css')
+
+  body
+    nav
+      ul.navbar 
+        li.logo
+          a(href='/main') Home
+        li
+          a(href='/gallery') Gallery
+        li
+          a(href='/create') Add Photo
+        li
+          a(href='/contact') Contact us
+
+main
+  .imageContainer 
+    img.mainImg(src="images/meerkat.jpg", alt="animals")
+
+  div.container
+    img.mainImg2(src="images/bird.jpg", alt="flamingo")
+    section.description
+      h1 Gallery
+      h2 Discover exclusive fine art photography
+      p Gallery of animals
+      p Gallery of animals
+      p Gallery of animals
