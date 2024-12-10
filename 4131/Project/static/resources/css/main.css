@@ -1,220 +1,135 @@
 /* body */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* nav bar */
-
+/* Basic Navbar Styling */
 .navbar {
-    background-color: white;
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-}
-
-nav li a .logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-left: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar li {
-    list-style: none; 
-    padding: 0px;
-    margin: 0; 
+  display: inline;
+  padding: 15px;
 }
 
-nav a {
-    color: #ecf0f1;
-    background-color:black;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #c0392b;
-}
-
-/* mainpage */
-
-
-main{
-  text-align: center;
-}
-.textAndImageContainer {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    gap: 20px; 
-    padding: 20px;
-}
-
-.textSection {
-    padding: 5px;
-    background-color: #ac7031;
-    max-width: 450px;
-    text-align: left; 
-}
-
-
-.imageContainer {
-  text-align: center;  /* Centers the image horizontally */
-}
-
-.mainImg {
-  max-width: 100%; /* Make the image responsive */
-  height: auto; /* Maintain aspect ratio */
+.navbar li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
   display: inline-block;
 }
 
-.container {
+.navbar li a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+/* Active Link Styling */
+.navbar li a.active {
+  font-weight: bold;
+  background-color: #ff6600; /* Highlight color */
+}
+
+/* Add New Project Button */
+.btn-add {
+  background-color: #ff6600;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.btn-add:hover {
+  background-color: #45a049;
+}
+
+/* Search Form Styling */
+.search-form {
   display: flex;
-  gap: 20px; 
-  padding: 20px;
-  justify-content: center; 
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.mainImg2 {
-  width: 250px; /* Set the width of the second image */
-  height: auto; /* Maintain the aspect ratio */
-  margin-right: 20px; /* Space between image and description */
+.search-form label {
+  color: white;
+  margin-right: 10px;
 }
 
-.description {
-  text-align: left; /* Align text to the left */
-  max-width: 450px; /* Set the maximum width of the description */
+.search-form input[type="search"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-.description h1, .description h2, .description p {
-  margin: 5px 0; /* Add space between text elements */
+.search-form select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
-/* gallery */
-/* Style for the image grid */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-  }
-  
-  .column {
-    flex: 25%; /* 4 columns per row */
-    padding: 0 4px;
-  }
-  
-  .column img {
-    width: 100%; /* Ensure images take up full column width */
-    height: auto;
-    margin-top: 8px;
-  }
-  
-  .column p {
-    text-align: center;
-    font-size: 14px;
-  }
-  
-
-/* adding page */
-
-.btn_title{
-    display: flex;
-    margin-left: 200px;
-    
+.search-form input[type="submit"] {
+  background-color: #ff6600;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
 }
 
-
-.btn_title, .adding-title, #bid-btn{
-    justify-content: space-between;
+.search-form input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
-#bid-btn{
-    background-color: #3d4d92;
-    color: white;
+/* Table Styling */
+.projectTitle {
+  text-align: center;
 }
 
-
-.main_form{
-    width: 25%;
-    margin: 0 auto;
-}
-.adding-forms label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    color: #34495e;
+.projectTable {
+  margin: 0 auto; 
+  width: 95%;
+  border-collapse: collapse; 
 }
 
-.adding-forms input[type="text"], .adding-forms input[type="month"], .adding-forms textarea, #Categories-form, #sale-Form {
-    width: 100%;
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: medium;
+.projectTable th {
+  background-color: #333;
+  color: white;
+  padding: 10px;
 }
 
-#Categories-form {
-    font-size: medium;
-    background-color: #ccc;
+.projectTable td {
+  padding: 10px;
+  text-align: center;
 }
 
-#adding-submit {
-    background-color: rgb(51, 108, 141);
-    margin: 10px 0; 
-    padding: 10px; 
-    color: white; 
-    font-size: 1em; 
-    cursor: pointer; 
+.projectTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+} 
+
+.tableData a {
+  text-decoration: none;
 }
 
-/* contact form */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  form div {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type='text'],
-  input[type='email'],
-  textarea {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button[type='submit'] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button[type='submit']:hover {
-    background-color: #45a049;
-  }
-  
+.deleteBtn {
+  background-color: #ff6600;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.statusChanger{
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}

@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Home Project Organizer
+    link(rel='stylesheet', href='/css/main.css')
+  body
+    nav
+      ul.navbar
+        // Logo/Home Link
+        li
+          a(href='/main') &#x1F3E0; Home
+        li
+          a(href='/projects') My Projects
+        li
+          a.btn-add(href='/create') + Add New Project
+        li
+          a(href='/profile') Profile
+        li
+          a(href='/logout') Logout
+    h1 Profile
+    section.profile-info
+      div.profile-picture
+        img(src='/images/profile.jpg', alt='Profile Picture')
+      div.profile-details
+        h2 John Doe
+        p Email: john.doe@example.com
+        p Location: New York, USA
+    section.projects
+      h2 My Projects
+      ul.projects-list
+        li
+          a(href='/projects/project-1') Project 1
+        li
+          a(href='/projects/project-2') Project 2
+        li
+          a(href='/projects/project-3') Project 3
+

@@ -1,0 +1,47 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title #{project.title} - Home Project Organizer
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/projectPage.js" defer)
+  body
+    nav
+      ul.navbar
+        li
+          a(href='/main') &#x1F3E0; Home
+        li
+          a(href='/projects') My Projects
+        li
+          a.btn-add(href='/create') + Add New Project
+        li
+          a(href='/profile') Profile
+        li
+          a(href='/logout') Logout
+    div.project-container
+      h1.projectName #{project.title}
+      .content
+        .column
+          .description-box
+            h2 Description
+            textarea#descriptionText #{project.description}
+            button#saveDescriptionBtn Save Description
+        .column
+          .comment-box
+            h2 Comments
+            ul.comment-list
+              each comment in project.Comments
+                li.comment-item(dataCommentId=comment.id)
+                  p.user #{comment.User}
+                  p.comment #{comment.comment}
+                  button.deleteComment Delete
+            form(action='/comment' method='POST')
+              label(for='User') Name
+              input(type='text' name='User' required)
+              input(type="text" id="commentInput" name="comment" placeholder="Add a comment..." required)
+              button(type='submit') Add Comment
+
+
+
+    

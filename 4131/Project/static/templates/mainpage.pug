@@ -3,30 +3,45 @@ html
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Photography
+    title Home Project Organizer 
     link(rel='stylesheet', href='/css/main.css')
-
   body
     nav
-      ul.navbar 
-        li.logo
-          a(href='/main') Home
+      ul.navbar
         li
-          a(href='/gallery') Gallery
+          a(href='/main') &#x1F3E0; Home
         li
-          a(href='/create') Add Photo
+          a(href='/projects') My Projects
         li
-          a(href='/contact') Contact us
+          a.btn-add(href='/create') + Add New Project
+        li
+          a(href='/profile') Profile
+        li
+          a(href='/logout') Logout
+    header
+      h1 Welcome to the Home Project Organizer!
+      p Streamline your home projects and stay organized.
+    main
+      section.intro
+        h2 About the Organizer
+        p Manage your home improvement tasks, track deadlines, and keep everything in one place. 
+        p Easily create, update, and track your projects while collaborating with others!
+      section.recent-projects
+        h2 Recent Projects
+        ul.project-list
+          if projects && projects.length > 0
+            each project in projects
+              li
+                a(href=`/projects/${project.id}`) #{project.title}
+          else
+            li No projects to display. Start by adding a new project!
+      section.quick-links
+        h2 Quick Links
+        ul.quick-links
+          li
+            a(href='/create') Add a New Project
+          li
+            a(href='/profile') Update Your Profile
+          li
+            a(href='/projects') View All Projects
 
-main
-  .imageContainer 
-    img.mainImg(src="images/meerkat.jpg", alt="animals")
-
-  div.container
-    img.mainImg2(src="images/bird.jpg", alt="flamingo")
-    section.description
-      h1 Gallery
-      h2 Discover exclusive fine art photography
-      p Gallery of animals
-      p Gallery of animals
-      p Gallery of animals

@@ -1,0 +1,65 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Home Project Organizer
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/table.js" defer)
+  body
+    ul.navbar
+      li
+        a(href='/main') &#x1F3E0; Home
+      li
+        a(href='/projects') My Projects
+      li
+        a.btn-add(href='/create') + Add New Project
+      li
+        a(href='/profile') Profile
+      form(action="/search" method="GET" class="search-form")
+        input(type="search" name="q" id="searchBar" placeholder="Search projects...")
+        select(name="categories" id="dropDown")
+          option(value="All") All Categories
+          option(value="repair") Repairs
+          option(value="improvement") Improvements
+          option(value="organization") Organization
+        input(type="submit" id="submitBtn")      
+      li
+        a(href='/logout') Logout
+    h1.projectTitle To-Do List 
+    table.projectTable(id="projectTable")
+      thead
+        tr
+          th Project
+          th.statusNavBtn status 
+            select(name="Status" id="dropDownStatus")
+              option(value="All") 
+              option(value="Done") Done 
+              option(value= "Not Done") Not Done
+          th Category
+          th.deadLinesNavBtn Deadline
+            select(name="Status" id="dropDownOverDue")
+              option(value="All") 
+              option(value="Overdue") Over Due Items
+          th Delete
+      tbody.tableData(id="tableData")
+        if projects && projects.length > 0
+          each project in projects
+            tr
+              td
+                a(href=`/projects/${project.id}`) #{project.title}
+              td
+                button.statusChanger(dataProjectId=project.id dataStatus=project.status)= project.status
+              td= project.category
+              td= project.deadline
+              td
+                button.deleteBtn(dataProjectId=project.id) Delete
+        else
+          tr
+            td(colspan="5") No projects available.
+      
+
+      
+
+
+
